@@ -1,0 +1,10 @@
+@import "tailwindcss";
+body { background: #0f0f14; color: #fff; font-family: system-ui, sans-serif; }
+
+/* "Print / Save PDF" on a ticket: hide everything except the ticket itself. */
+@media print {
+  body * { visibility: hidden; }
+  #ticket-print, #ticket-print * { visibility: visible; }
+  #ticket-print { position: fixed; left: 0; top: 0; width: 360px; }
+  .modal-backdrop { background: #fff !important; }
+}
